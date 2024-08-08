@@ -1,0 +1,112 @@
+body {
+    margin: 0;
+    padding:0;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.sidebar,
+.content {
+    display: flex;
+    flex-direction: column;
+    min-height: 720px;
+    border-radius: 4px;
+    margin: 10px;
+    border:1px solid #777;
+}
+
+.sidebar {
+    flex-grow: 1;
+    min-width: 200px;
+}
+
+.content {
+    flex-grow: 4;
+    min-width: 630px;
+    padding: 15px;
+}
+
+.links :is(li a:hover, a:visited, a:link, a:active) {
+    text-decoration: none;
+    color: #444;
+}
+
+.module-container {
+    margin: 10px auto;
+    border-radius: 4px;
+    display: block;
+    border: 1px solid #777;
+    display: flex;
+    max-width: max(720px,75%);
+    flex-direction: row;
+}
+
+.task,.coding {
+    display: flex;
+    flex-direction: column;
+    min-height: 100px;
+    flex-grow: 1;
+    margin: 10px;
+    min-width: 200px;
+}
+
+.coding {
+    height:auto;
+}
+
+.code {
+    resize: none;
+    padding:10px;
+    height:93%;
+}
+
+#submit {
+    height:7%;
+}
+
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 16px;
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    bottom: 30px;
+}
+
+#snackbar.show {
+    visibility: visible; /* Show the snackbar */
+    /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+    -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@keyframes fadein {
+    from {bottom: 0; opacity: 0;}
+    to {bottom: 30px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+    from {bottom: 30px; opacity: 1;}
+    to {bottom: 0; opacity: 0;}
+}

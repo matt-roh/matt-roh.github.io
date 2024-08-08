@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Interactive Guide to PS</title>
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#module").hide();
+                $("div.judge").each(function(i){
+                    let inner=document.getElementById("module").innerHTML
+                    inner=inner.replace("$statement$","문제 내용 예시입니다.")
+                    inner=inner.replace("$input-form$","입력 형식 예시입니다.")
+                    inner=inner.replace("$output-form$","출력 형식 예시입니다.")
+                    inner=inner.replace("$input$","예제 입력입니다.")
+                    inner=inner.replace("$output$","예제 출력입니다.")
+                    $(this).html(
+                        inner
+                    );
+                    $(this).find('#subm').click(function(){
+                        let x=$("#snackbar");
+                        x.addClass("show");
+                        setTimeout(function(){x.removeClass("show");},2000);
+                    })
+                });
+            });
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="sidebar">
+                <ul class="links">
+                    <li><a href="page1.html">시작하기</a></li>
+                    <li>입출력에 대해</li>
+                    <li>기본적인 연산</li>
+                </ul>
+            </div>
+            <div class="content">
+                <h1>안녕하세요!</h1>
+                Interactive Guide to PS는 컴퓨터로 하는 문제 해결 (Problem Solving, PS)에 대한 전반적인 가이드를 제공하는 것을 목표로 하고 있습니다. 다른 가이드와는 다음과 같은 차이점을 두는 것을 지향하고 있습니다.
+                <ul>
+                    <li>PS에 대한 대부분의 가이드는 정보를 제공하는 사이트와 채점 서비스를 지원하는 사이트가 다릅니다.</li>
+                    <li>때문에 가이드를 제공하는 페이지와 채점 페이지를 번갈아가며 이동하는 데는 상당한 번거로움이 있습니다.</li>
+                    <li>이 가이드는 가이드와 채점을 하나의 페이지에서 제공하는 것을 목표로 합니다.</li>
+                </ul>
+                <div class="judge" id="judge-1">judge-1</div>
+                가이드 중에 위와 같은 "문제 폼"이 종종 등장합니다. 폼이 등장할 때마다 가이드에서 배우는 내용에 따라 문제를 풀어보고 넘어갈 것을 추천합니다.
+            </div>
+        </div>
+        <div id="module">
+            <form>
+                <div class="module-container">
+                    <div class="task" id="task">
+                            <h3>문제</h3>
+                            <div class="statement">
+                                $statement$
+                            </div>
+                            <h3>입력 형식</h3>
+                            <div class="inputf">
+                                $input-form$
+                            </div>
+                            <h3>출력 형식</h3>
+                            <div class="outputf">
+                                $output-form$
+                            </div>
+                            <h3>입력</h3>
+                            <textarea readonly id="input" style="resize:none;">$input$</textarea>
+                            <h3>출력</h3>
+                            <textarea readonly id="output" style="resize:none;">$output$</textarea>
+                    </div>
+                    <div class="coding" id="coding">
+                            <textarea class="code" id="code" cols="30"></textarea>
+                            <button class="subm" id="subm" type="button">제출!</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div id="snackbar">
+            채점 결과
+        </div>
+    </body>
+</html>
