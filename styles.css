@@ -20,7 +20,7 @@ body {
     min-height: 720px;
     border-radius: 15px;
     margin: 5px;
-    border:1px solid #777;
+    border:1px solid blue;
     background-color:white;
 }
 
@@ -44,7 +44,7 @@ body {
     margin: 10px auto;
     border-radius: 4px;
     display: block;
-    border: 1px solid #777;
+    border: 1px solid blue;
     display: flex;
     max-width: max(720px,75%);
     flex-direction: row;
@@ -85,9 +85,8 @@ body {
 }
 
 .subm {
-    background-color:blue;
-    color: black;
-    border: 1px solid #777;
+    background-color: white;
+    border: 2px solid blue;
     height:7%;
 }
 
