@@ -13,10 +13,9 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 720px;
-    border-radius: 10px;
+    border-radius: 30px;
     margin: 15px;
     border:1px solid #777;
-    filter:drop-shadow(black 15px 15px 10px);
 }
 
 .sidebar {
@@ -27,7 +26,7 @@ body {
 .content {
     flex-grow: 3;
     min-width: 630px;
-    padding: 20px;
+    padding: 10px 20px;
 }
 
 .links :is(li a:hover, a:visited, a:link, a:active) {
