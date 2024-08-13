@@ -11,6 +11,7 @@ body {
 .content div {
     font-size: 16px;
 }
+  
 
 .sidebar,
 .content {
@@ -66,13 +67,27 @@ body {
     height:auto;
 }
 
+.task textarea {
+    border-radius: 4px;
+}
+
+.coding textarea {
+    border-radius: 4px;
+}
+
 .code {
+    font-family: "Nanum Gothic Coding", monospace;
+    font-weight: 400;
+    font-style: normal;
     resize: none;
     padding:10px;
     height:93%;
 }
 
-#submit {
+.subm {
+    background-color:blue;
+    color: black;
+    border: 1px solid #777;
     height:7%;
 }
 
