@@ -12,7 +12,7 @@
                     let judg=$(this);
                     let which=judg.attr('id');
 
-                    let obj="";
+                    let obj;
 
                     fetch(which+".json")
                     .then(function(res){
