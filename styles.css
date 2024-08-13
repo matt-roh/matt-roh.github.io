@@ -84,6 +84,12 @@ body {
     outline:none;
 }
 
+code {
+    font-family: "Nanum Gothic Coding", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .subm {
     border-radius: 4px;
     background-color: white;
