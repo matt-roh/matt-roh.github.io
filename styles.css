@@ -36,7 +36,7 @@ body {
     color: #444;
 }
 
-.module-container {
+.module-container,.judge {
     margin: 10px auto;
     border-radius: 4px;
     display: block;
