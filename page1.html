@@ -9,6 +9,22 @@
                 $("#module").hide();
                 $("div.judge").each(function(i){
                     let inner=document.getElementById("module").innerHTML
+                    let judg=$(this);
+                    let which=judg.attr('id');
+
+                    let obj
+
+                    fetch(which+".json")
+                    .then(function(res){
+                        if(!res.ok){
+                            throw new Error("http error");
+                        }
+                        return res.json();
+                    })
+                    .then(function(data){
+                        obj=data;
+                    });
+
                     inner=inner.replace("$statement$","문제 내용 예시입니다.")
                     inner=inner.replace("$input-form$","입력 형식 예시입니다.")
                     inner=inner.replace("$output-form$","출력 형식 예시입니다.")
@@ -17,8 +33,10 @@
                     $(this).html(
                         inner
                     );
+                    
                     $(this).find('#subm').click(function(){
                         let x=$("#snackbar");
+                        alert(obj)
                         x.addClass("show");
                         setTimeout(function(){x.removeClass("show");},2000);
                     })
