@@ -16,7 +16,7 @@ body {
     border-radius: 10px;
     margin: 15px;
     border:1px solid #777;
-    filter:drop-shadow(5px 5px 2px black);
+    filter:drop-shadow(black 15px 15px 10px);
 }
 
 .sidebar {
