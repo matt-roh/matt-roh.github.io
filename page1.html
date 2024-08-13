@@ -34,9 +34,42 @@
                         console.log(obj);
                         judg.find('#subm').click(function(){
                             let x=$("#snackbar");
-                            alert(obj.output)
-                            x.addClass("show");
-                            setTimeout(function(){x.removeClass("show");},2000);
+                            
+                            $.post("https://emkc.org/api/v2/piston/execute",
+                                {
+                                    "language":"python",
+                                    "files":[
+                                        {"content":judg.find("#code").val()}
+                                    ],
+                                    "stdin":judg.find("#input").val(),
+                                    "run_timeout":100,
+                                    "run_memory_limit":-1
+                                },
+                                function(data){
+                                    if(data.run.signal!=null){
+                                        x.text("Bad Result (TLE/MLE)")
+                                        x.addClass("show");
+                                        setTimeout(function(){x.removeClass("show");},2000);
+                                    }
+                                    else{
+                                        let out=data.run.stdout
+                                        if(out===obj.output){
+                                            x.text("Accepted")
+                                            x.addClass("show");
+                                            setTimeout(function(){x.removeClass("show");},2000);
+                                        }
+                                        else{
+                                            x.text("Wrong Answer")
+                                            x.addClass("show");
+                                            setTimeout(function(){x.removeClass("show");},2000);
+                                        }
+                                    }
+                                }
+                            ).fail(function(xhr,stat,err){
+                                x.text("Ajax Call Error")
+                                x.addClass("show");
+                                setTimeout(function(){x.removeClass("show");},2000);
+                            })
                         });
                     }).catch(function(err){
                         alert(err);
