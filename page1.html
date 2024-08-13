@@ -23,16 +23,16 @@
                     })
                     .then(function(data){
                         obj=data;
-
                         inner=inner.replace("$statement$",obj.statement);
                         inner=inner.replace("$input-form$",obj.inputf);
                         inner=inner.replace("$output-form$",obj.outputf);
                         inner=inner.replace("$input$",obj.input);
                         inner=inner.replace("$output$",obj.output);
-                        $(this).html(
+                        judg.html(
                             inner
                         );
-                        $(this).find('#subm').click(function(){
+                        console.log(obj);
+                        judg.find('#subm').click(function(){
                             let x=$("#snackbar");
                             alert(obj.output)
                             x.addClass("show");
@@ -41,6 +41,7 @@
                     }).catch(function(err){
                         alert(err);
                     });
+                    
                 });
             });
         </script>
