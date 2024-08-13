@@ -25,11 +25,13 @@
                         obj=data;
                     });
 
-                    inner=inner.replace("$statement$",obj.statement)
-                    inner=inner.replace("$input-form$",obj.inputf)
-                    inner=inner.replace("$output-form$",obj.outputf)
-                    inner=inner.replace("$input$",obj.input)
-                    inner=inner.replace("$output$",obj.output)
+                    console.log(obj);
+
+                    inner=inner.replace("$statement$",obj.statement);
+                    inner=inner.replace("$input-form$",obj.inputf);
+                    inner=inner.replace("$output-form$",obj.outputf);
+                    inner=inner.replace("$input$",obj.input);
+                    inner=inner.replace("$output$",obj.output);
                     $(this).html(
                         inner
                     );
@@ -43,7 +45,7 @@
                                 "files":[
                                     {"content":judg.find("#code").val()}
                                 ],
-                                "stdin":obj.input,
+                                "stdin":judg.find(".inputf").val(),
                                 "run_timeout":100,
                                 "run_memory_limit":268435456
                             }
@@ -57,7 +59,7 @@
                             x.addClass("show");
                             setTimeout(function(){x.removeClass("show");},2000);
                         });
-                    })
+                    });
                 });
             });
         </script>
