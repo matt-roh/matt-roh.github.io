@@ -23,26 +23,23 @@
                     })
                     .then(function(data){
                         obj=data;
+
+                        inner=inner.replace("$statement$",obj.statement);
+                        inner=inner.replace("$input-form$",obj.inputf);
+                        inner=inner.replace("$output-form$",obj.outputf);
+                        inner=inner.replace("$input$",obj.input);
+                        inner=inner.replace("$output$",obj.output);
+                        $(this).html(
+                            inner
+                        );
+                        $(this).find('#subm').click(function(){
+                            let x=$("#snackbar");
+                            alert(obj.output)
+                            x.addClass("show");
+                            setTimeout(function(){x.removeClass("show");},2000);
+                        });
                     }).catch(function(err){
                         alert(err);
-                    });
-
-                    console.log(obj);
-
-                    inner=inner.replace("$statement$",obj.statement);
-                    inner=inner.replace("$input-form$",obj.inputf);
-                    inner=inner.replace("$output-form$",obj.outputf);
-                    inner=inner.replace("$input$",obj.input);
-                    inner=inner.replace("$output$",obj.output);
-                    $(this).html(
-                        inner
-                    );
-                    
-                    $(this).find('#subm').click(function(){
-                        let x=$("#snackbar");
-                        alert(obj.output)
-                        x.addClass("show");
-                        setTimeout(function(){x.removeClass("show");},2000);
                     });
                 });
             });
