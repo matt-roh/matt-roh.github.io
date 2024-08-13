@@ -85,6 +85,7 @@ body {
     resize: none;
     padding:10px;
     height:93%;
+    outline:none;
 }
 
 .subm {
