@@ -20,7 +20,7 @@ body {
     min-height: 720px;
     border-radius: 15px;
     margin: 5px;
-    border:1px solid blue;
+    border:1px solid #90AEAD;
     background-color:white;
 }
 
@@ -44,7 +44,7 @@ body {
     margin: 10px auto;
     border-radius: 4px;
     display: block;
-    border: 1px solid blue;
+    border: 1px solid #90AEAD;
     display: flex;
     max-width: max(720px,75%);
     flex-direction: row;
@@ -68,14 +68,17 @@ body {
 }
 
 .task textarea {
+    border: 1px solid #90AEAD;
     border-radius: 4px;
 }
 
 .coding textarea {
+    border: 1px solid #90AEAD;
     border-radius: 4px;
 }
 
 .code {
+    font-size: 12px;
     font-family: "Nanum Gothic Coding", monospace;
     font-weight: 400;
     font-style: normal;
@@ -85,8 +88,9 @@ body {
 }
 
 .subm {
+    border-radius: 4px;
     background-color: white;
-    border: 2px solid blue;
+    border: 2px solid #E64833;
     height:7%;
 }
 
@@ -94,8 +98,9 @@ body {
     visibility: hidden;
     min-width: 250px;
     margin-left: -125px;
-    background-color: #333;
-    color: #fff;
+    border: 2px solid #E64833;
+    background-color: #90AEAD;
+    color: black;
     text-align: center;
     border-radius: 5px;
     padding: 16px;
