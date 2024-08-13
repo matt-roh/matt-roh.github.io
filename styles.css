@@ -8,6 +8,10 @@ body {
     flex-direction: row;
 }
 
+.content div {
+    font-size: 16px;
+}
+
 .sidebar,
 .content {
     display: flex;
@@ -16,6 +20,7 @@ body {
     border-radius: 15px;
     margin: 5px;
     border:1px solid #777;
+    filter:drop-shadow(5px 5px 2px grey);
 }
 
 .sidebar {
