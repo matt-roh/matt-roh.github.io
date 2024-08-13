@@ -25,21 +25,41 @@
                         obj=data;
                     });
 
-                    inner=inner.replace("$statement$","문제 내용 예시입니다.")
-                    inner=inner.replace("$input-form$","입력 형식 예시입니다.")
-                    inner=inner.replace("$output-form$","출력 형식 예시입니다.")
-                    inner=inner.replace("$input$","예제 입력입니다.")
-                    inner=inner.replace("$output$","예제 출력입니다.")
+                    console.log(obj);
+
+                    inner=inner.replace("$statement$",obj.statement);
+                    inner=inner.replace("$input-form$",obj.inputf);
+                    inner=inner.replace("$output-form$",obj.outputf);
+                    inner=inner.replace("$input$",obj.input);
+                    inner=inner.replace("$output$",obj.output);
                     $(this).html(
                         inner
                     );
                     
                     $(this).find('#subm').click(function(){
                         let x=$("#snackbar");
-                        alert(obj.output)
-                        x.addClass("show");
-                        setTimeout(function(){x.removeClass("show");},2000);
-                    })
+                        // piston API call
+                        let aj=$.post("https://emkc.org/api/v2/piston/execute",
+                            {
+                                "language":"py3",
+                                "files":[
+                                    {"content":judg.find("#code").val()}
+                                ],
+                                "stdin":judg.find(".inputf").val(),
+                                "run_timeout":100,
+                                "run_memory_limit":268435456
+                            }
+                        ).done(function(data){
+                            x.text("Run Success!");
+                            console.log(data);
+                            x.addClass("show");
+                            setTimeout(function(){x.removeClass("show");},2000);
+                        }).fail(function(XMLHttpRequest, textStatus, errorThrown){
+                            x.text("HTML Error");
+                            x.addClass("show");
+                            setTimeout(function(){x.removeClass("show");},2000);
+                        });
+                    });
                 });
             });
         </script>
