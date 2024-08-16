@@ -19,33 +19,19 @@
                 </ul>
             </div>
             <div class="content">
-                <h1>안녕하세요!</h1>
+                <h1>입출력에 대해</h1>
                 <div>
-                    Interactive Guide to PS는 컴퓨터로 하는 문제 해결 (Problem Solving, PS)에 대한 전반적인 가이드를 제공하는 것을 목표로 하고 있습니다. 다른 가이드와는 다음과 같은 차이점을 두는 것을 지향하고 있습니다.
+                    파이썬에서 출력을 할 때에는 함수 <code>print()</code>를 사용합니다. 한 번에 한 개의 값을 출력할 수도 있고 여러 개의 값을 출력할 수도 있습니다. 기본적으로 여러 개의 인수를 넣을 경우 공백으로 구분하여 출력하며, 인수를 모두 출력한 후 줄바꿈으로 마무리합니다. 예를 들어 다음과 같은 사용이 가능합니다.
                 </div>
                 <ul>
-                    <li>PS에 대한 대부분의 가이드는 정보를 제공하는 사이트와 채점 서비스를 지원하는 사이트가 다릅니다.</li>
-                    <li>때문에 가이드를 제공하는 페이지와 채점 페이지를 번갈아가며 이동하는 데는 상당한 번거로움이 있습니다.</li>
-                    <li>이 가이드는 가이드와 채점을 하나의 페이지에서 제공하는 것을 목표로 합니다.</li>
+                    <li>변수 <code>a</code>를 출력: <code>print(a)</code></li>
+                    <li>변수 <code>a</code>와 변수 <code>b</code>를 한 줄에 공백으로 구분하여 출력: <code>print(a,b)</code></li>
+                    <li>문자열 <code>"Hello"</code>와 변수 <code>x</code>를 한 줄에 공백으로 구분하여 출력: <code>print("Hello",x)</code></li>
                 </ul>
-                <div class="judge" id="judge-1">judge-1</div>
                 <div>
-                    가이드 중에 위와 같은 "문제 폼"이 종종 등장합니다. 폼이 등장할 때마다 가이드에서 배우는 내용에 따라 문제를 풀어보고 넘어갈 것을 추천합니다. Python을 이미 알고 있다면 여기서 바로 시도해 보실 수도 있습니다!
+                    또한 리스트와 같이 값 여러 개로 이루어진 구조가 있다면 <code>print(*arr)</code>과 같이 내부의 값을 모두 한 줄에 공백으로 구분하여 출력할 수도 있습니다. 그렇다면 다음은 어떻게 해결할 수 있을까요? 직접 시도해 봅시다.
                 </div>
-                <br>
-                <div>
-                    기본적으로 이 가이드에서는 Python을 기준으로 설명합니다. 장기적으로 다른 언어를 지원할 수도 있지만, 현재는 지원할 계획이 없습니다. 다른 언어에 관해 가이드를 작성하고자 하는 경우 <a href="https://github.com/matt-roh/matt-roh.github.io" class="inline">GitHub</a>에서 클론하여 비교적 간단하게 수정할 수 있을 것으로 생각하고 있습니다.
-                </div>
-                <br>
-                <div>
-                    문제 폼에서의 채점은 <a href="https://github.com/engineer-man/piston" class="inline">Piston API</a>를 사용합니다. Public API이기 때문에, 어느 정도의 빈도 제한은 감안해 주시기 바랍니다. 채점 환경은 다음과 같습니다.
-                </div>
-                <ul>
-                    <li>언어: Python 3</li>
-                    <li>언어 버전: 3.10.0</li>
-                    <li>시간 제한: <b>0.1초</b></li>
-                    <li>메모리 제한: 별도 설정 없음 (API에서 제공하는 만큼)</li>
-                </ul>
+                <div class="judge" id="judge-2">judge-2</div>
             </div>
         </div>
         <div id="module">
