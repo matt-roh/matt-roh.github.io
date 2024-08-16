@@ -39,6 +39,7 @@ body {
 .module-container {
     margin: 10px auto;
     border-radius: 4px;
+    display: block;
     border: 1px solid #90AEAD;
     display: flex;
     max-width: max(720px,75%);
@@ -53,7 +54,7 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100px;
-    flex: 1 1 0;
+    flex-grow: 1;
     margin: 10px;
     min-width: 200px;
 }
