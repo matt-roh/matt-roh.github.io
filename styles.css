@@ -57,7 +57,15 @@ body {
     flex: 1 1 0px;
     width: 0px;
     margin: 10px;
-    min-width: 200px;
+    min-width: 45%;
+}
+
+.statement {
+    text-wrap: wrap;
+}
+
+.inputf, .outputf {
+    text-wrap: nowrap;
 }
 
 .coding {
