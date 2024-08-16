@@ -52,7 +52,6 @@ body {
 }
 
 .task,.coding {
-    flex-direction: column;
     min-height: 100px;
     flex-grow: 1;
     margin: 10px;
