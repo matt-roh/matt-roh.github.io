@@ -39,9 +39,10 @@ body {
 .module-container {
     margin: 10px auto;
     border-radius: 4px;
-    display: block;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    grid-gap: 10%;
     border: 1px solid #90AEAD;
-    display: flex;
     max-width: max(720px,75%);
     flex-direction: row;
 }
@@ -51,7 +52,6 @@ body {
 }
 
 .task,.coding {
-    display: flex;
     flex-direction: column;
     min-height: 100px;
     flex-grow: 1;
