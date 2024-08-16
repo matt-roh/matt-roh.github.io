@@ -60,11 +60,11 @@ body {
     min-width: 45%;
 }
 
-.statement {
+.statement, .inputf, .outputf {
     text-wrap: wrap;
 }
 
-.inputf, .outputf {
+.input, .output {
     text-wrap: nowrap;
 }
 
